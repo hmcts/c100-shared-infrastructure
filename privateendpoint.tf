@@ -1,5 +1,5 @@
 data "azurerm_subnet" "petpostgres" {
-  provider             = "azurerm.pet-aks"
+  provider             = "azurerm.sds-sbox"
   name                 = "pet_private_${local.petenv}"
   virtual_network_name = "pet_${local.petenv}_network"
   resource_group_name  = "pet_${local.petenv}_network_resource_group"
@@ -9,13 +9,13 @@ locals {
   petenv = var.env == "prod" || var.env == "stg" ? var.env : "dev"
 }
 resource "azurerm_resource_group" "petrg" {
-  provider = "azurerm.pet-aks"
+  provider = "azurerm.sds-sbox"
   name     = "${var.product}-${local.petenv}-endpoint-rg"
   location = var.location
 
 }
 resource "azurerm_private_endpoint" "petpostgres" {
-  provider            = "azurerm.pet-aks"
+  provider            = "azurerm.sds-sbox"
   name                = "${var.product}-${local.petenv}-endpoint"
   location            = var.location
   resource_group_name = azurerm_resource_group.petrg.name
