@@ -15,7 +15,7 @@ resource "azurerm_resource_group" "rg" {
 }
 #PET subnet for privateendpoint
 provider "azurerm" {
-  subscription_id = "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
-  alias           = "sds-sbox"
+  subscription_id = "867a878b-cb68-4de5-9741-361ac9e178b6"
+  alias           = "sds-dev"
   features {}
 }
