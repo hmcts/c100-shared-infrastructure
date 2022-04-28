@@ -15,7 +15,7 @@ resource "azurerm_resource_group" "rg" {
 }
 #PET subnet for privateendpoint
 provider "azurerm" {
-  subscription_id = "867a878b-cb68-4de5-9741-361ac9e178b6"
+  subscription_id = ${var.subscription_id}
   alias           = "sds-dev"
   features {}
 }

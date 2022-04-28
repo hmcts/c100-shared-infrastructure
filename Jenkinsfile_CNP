@@ -2,8 +2,10 @@
 //noinspection GroovyUnusedAssignment
 @Library("Infrastructure") _
 
+def component = "shared-infrastructure"
 def product = "c100"
 
 withInfraPipeline(product) {
+
 }
 

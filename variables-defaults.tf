@@ -31,3 +31,7 @@ variable "db_postgresql_user" {
 variable "product_group_name" {
   default = "dcd_group_pet_v2"
 }
+
+variable "subscription_id" {
+  type = string
+}
