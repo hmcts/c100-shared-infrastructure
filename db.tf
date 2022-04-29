@@ -1,5 +1,5 @@
 module "c100-database" {
-  source             = "git@github.com:hmcts/cnp-module-postgres?ref=pet-disable-dns-sec100ing"
+  source             = "git@github.com:hmcts/cnp-module-postgres?ref=pet-disable-dns-setting"
   product            = var.product
   component          = ""
   location           = var.location
