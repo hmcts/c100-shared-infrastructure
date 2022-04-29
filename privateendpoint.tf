@@ -1,6 +1,6 @@
 data "azurerm_subnet" "petpostgres" {
   provider             = "azurerm.sds-sbox"
-  name                 = "ss-private_${local.petenv}"
+  name                 = "iaas"
   virtual_network_name = "ss-${local.petenv}-vnet"
   resource_group_name  = "ss-${local.petenv}-network-rg"
 }
