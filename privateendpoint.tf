@@ -6,7 +6,7 @@ data "azurerm_subnet" "petpostgres" {
 }
 
 locals {
-  petenv = var.env == "prod" || var.env == "stg" ? var.env : "dev"
+  petenv = var.env == "prod" || var.env == "stg" ? var.env : "sbox"
 }
 resource "azurerm_resource_group" "petrg" {
   provider = "azurerm.sds-sbox"
