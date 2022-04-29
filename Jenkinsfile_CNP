@@ -6,4 +6,3 @@ def product = "c100"
 
 withInfraPipeline(product) {
 }
-
