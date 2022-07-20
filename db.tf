@@ -13,6 +13,13 @@ module "c100-database" {
   business_area      = "SDS"
   key_vault_rg       = "genesis-rg"
   key_vault_name     = "dtssharedservices${var.env}kv"
+  subnet_id          = data.azurerm_subnet.postgres.id
+}
+
+data "azurerm_subnet" "postgres" {
+  name                 = "iaas"
+  resource_group_name  = "ss-${var.env}-network-rg"
+  virtual_network_name = "ss-${var.env}-vnet"
 }
 
 # Add DB outputs to keyvault
