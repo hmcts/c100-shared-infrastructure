@@ -8,6 +8,24 @@ variable "common_tags" {
   type = map(string)
 }
 
+# Database
+
+variable "db_storage_mb" {
+  default = "5120"
+}
+
+variable "component" {
+  default = "service"
+}
+
+variable "db_version" {
+  default = 11
+}
+
+variable "db_postgresql_user" {
+  default = "c100_postgresql_user"
+}
+
 # Keyvault
 
 variable "product_group_name" {
