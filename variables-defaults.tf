@@ -7,3 +7,9 @@ variable "location" {
 variable "common_tags" {
   type = map(string)
 }
+
+# Keyvault
+
+variable "product_group_name" {
+  default = "dcd_group_pet_v2"
+}
