@@ -22,19 +22,19 @@ data "azurerm_subnet" "postgres" {
   virtual_network_name = "ss-${var.env}-vnet"
 }
 
-resource "azurerm_key_vault_secret" "c100-postgres-database" {
+resource "azurerm_key_vault_secret" "c100-postgres-user-name" {
   name         = "c100-postgres-user-name"
   value        = module.c100-database.user_name
   key_vault_id = module.c100-key-vault.key_vault_id
 }
 
-resource "azurerm_key_vault_secret" "c100-postgres-database" {
+resource "azurerm_key_vault_secret" "c100-postgres-password" {
   name         = "c100-postgres-password"
   value        = module.c100-database.postgresql_password
   key_vault_id = module.c100-key-vault.key_vault_id
 }
 
-resource "azurerm_key_vault_secret" "c100-postgres-database" {
+resource "azurerm_key_vault_secret" "c100-postgres-host-name" {
   name         = "c100-postgres-host-name"
   value        = module.c100-database.host_name
   key_vault_id = module.c100-key-vault.key_vault_id
