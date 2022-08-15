@@ -13,20 +13,9 @@ data "azurerm_subnet" "redis" {
   virtual_network_name = "ss-${var.env}-vnet"
 }
 
-resource "azurerm_key_vault_secret" "c100-redis-access-key" {
-  name         = "redis-access-key"
-  value        = module.redis.access_key
-  key_vault_id = module.c100-key-vault.key_vault_id
-}
-
-resource "azurerm_key_vault_secret" "c100-redis-host" {
-  name         = "redis-host"
-  value        = module.redis.host_name
-  key_vault_id = module.c100-key-vault.key_vault_id
-}
-
-resource "azurerm_key_vault_secret" "c100-redis-port" {
-  name         = "redis-port"
-  value        = module.redis.redis_port
+# Format: rediss://:[password]@[hostname]:[port]/[db]
+resource "azurerm_key_vault_secret" "c100-redis-url" {
+  name         = "redis-url"
+  value        = "rediss://:${urlencode(module.redis.access_key)}@${module.redis.host_name}:${module.redis.redis_port}"
   key_vault_id = module.c100-key-vault.key_vault_id
 }
